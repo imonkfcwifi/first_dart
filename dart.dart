@@ -1,12 +1,8 @@
 void main() {
-  String? name = "imonkfcwifi";
-  name = null;
-  if (name != null) {
-    name.isNotEmpty;
-  }
+  late final String name;
+// do something go to api
+  name = 'imonkfcwifi';
   print(name);
 
-  final blabla = 'bla bla';
-
-  // final == const
+  // flutter로 data fetching 할때 유용하다
 }
