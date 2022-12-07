@@ -5,4 +5,8 @@ void main() {
     name.isNotEmpty;
   }
   print(name);
+
+  final blabla = 'bla bla';
+
+  // final == const
 }
