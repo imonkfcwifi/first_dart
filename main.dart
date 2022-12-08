@@ -1,12 +1,11 @@
-String sayHello(
-    {required String name, required int age, required String country}) {
-  return 'halo $name you are $age and you come from $country';
-}
-
+//
+String sayHello(String name, int age, [String? country = 'cuba']) =>
+    'hello $name youare $age your $country ';
+//  ? = not required
 void main() {
-  print(sayHello(
-    age: 12,
-    country: 'korea',
-    name: 'imonkfcwifi',
-  ));
+  var result = sayHello(
+    'imonkfcwifi0',
+    25,
+  );
+  print(result);
 }
