@@ -1,7 +1,9 @@
 void main() {
-  const max_allowed_price = 120;
-
-  // flutter로 data fetching 할때 유용하다
+  String name = 'imonkfcwifi';
+  bool alive = true;
+  int age = 25;
+  double myage = 25.9;
+  num x = 12;
+  x = 1.1;
+  // X는 double과 int 둘다 가능
 }
-// 사용자가 화면에 입력해야 하는 값이라면 final or var
-//  앱스토어에 앱을 올리기 전 (컴파일단계)에 값을 알고있다면 const
