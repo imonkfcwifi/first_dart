@@ -1,24 +1,16 @@
 void main() {
-  Map<List<int>, bool> player = {
-    [
-      1,
-      2,
-      3,
-      4,
-    ]: true,
-    [
-      4,
-      5,
-      6,
-      7,
-    ]: false,
-    [
-      3,
-      8,
-      7,
-    ]: true,
-    // 명시적으로 특정해줄수 있음
-    // 단순히 var을 써도 상관없음 대신 컴파일러가 key와 value의 자료형을 설정해줌
-    // map도 마찬가지로 method와 property가 있음
+  Set<int> numbers = {
+    1,
+    2,
+    3,
+    4,
+    5,
   };
+  numbers.add(1);
+
+// set과 list의 차이 : Set에 속한 모든 아이템들은 유니크 함
+// numbers에 1을 아무리 add해도 값은 항상 1,2,3,4,5로 나온다
+// list는 중괄호대신 대괄호를 사용한다, 그리고 1도 add된다
+// sets => items are always unique
+// lists => items are not always unique
 }
