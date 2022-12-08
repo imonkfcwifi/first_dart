@@ -1,16 +1,10 @@
-void main() {
-  Set<int> numbers = {
-    1,
-    2,
-    3,
-    4,
-    5,
-  };
-  numbers.add(1);
+String sayHello(String name) => "hello $name nice to meet you";
+// 한줄짜리 코드가 곧바로 return 할경우 fat arrow syntax를 사용한다 아래와 같다
+// String sayHello(String name) {
+//   return "hello $name nice to meet you";
+// }
 
-// set과 list의 차이 : Set에 속한 모든 아이템들은 유니크 함
-// numbers에 1을 아무리 add해도 값은 항상 1,2,3,4,5로 나온다
-// list는 중괄호대신 대괄호를 사용한다, 그리고 1도 add된다
-// sets => items are always unique
-// lists => items are not always unique
+num plus(num a, num b) => a + b;
+void main() {
+  print(sayHello('imonkfcwifi'));
 }
