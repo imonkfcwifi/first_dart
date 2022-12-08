@@ -1,18 +1,21 @@
-import 'dart:_js_annotations';
+typedef ListOfInts = List<int>;
+typedef UserInfo = Map<String, String>;
 
-String capiName(String? name) => name?.toUpperCase() ?? 'ANON';
-void main() {
-  capiName('imonkfcwifi');
-  capiName(null);
+ListOfInts reverseListOfNumbers(ListOfInts list) {
+  var reversed = list.reversed;
+  return reversed.toList();
 }
 
-//  left ?? right
-//  left가 null 이면 right을 return
-//  left가 not null 이면 left를 return 한다
-
-void main() {
-  String? name;
-  name ??= 'kfc';
+String sayHi(UserInfo userInfo) {
+  return "Hi ${userInfo['name']} ";
 }
 
-// 만약 name 이 null 이라면 ??=를 써서 다음과 같은 값을 할당해준다
+void main() {
+  print(reverseListOfNumbers([1, 2, 3]));
+  sayHi({"name": 'imonkfcwifi'});
+}
+
+// typedef는 자료형에 alias를 붙일 수 있게 해준다
+// 간단한 데이터 alias를 만들때 사용함
+// ex) int list, map, set
+// 만약 구조화된 data의 형태를 지정하고 싶으면 class를 만들어야 함
