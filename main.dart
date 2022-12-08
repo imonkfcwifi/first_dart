@@ -1,21 +1,16 @@
-typedef ListOfInts = List<int>;
-typedef UserInfo = Map<String, String>;
+class Player {
+  final String name = 'imonkfcwifi';
+  int xp = 1500;
 
-ListOfInts reverseListOfNumbers(ListOfInts list) {
-  var reversed = list.reversed;
-  return reversed.toList();
-}
-
-String sayHi(UserInfo userInfo) {
-  return "Hi ${userInfo['name']} ";
+  void sayHello() {
+    print("hi my name is $name");
+  }
 }
 
 void main() {
-  print(reverseListOfNumbers([1, 2, 3]));
-  sayHi({"name": 'imonkfcwifi'});
+  var player = Player();
+  player.sayHello();
+  print(player.name);
 }
 
-// typedef는 자료형에 alias를 붙일 수 있게 해준다
-// 간단한 데이터 alias를 만들때 사용함
-// ex) int list, map, set
-// 만약 구조화된 data의 형태를 지정하고 싶으면 class를 만들어야 함
+// class를 생성할때는 타입을 꼭 명시해야 함
