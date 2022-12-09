@@ -1,47 +1,38 @@
-abstract class Human {
-  void walk();
+class Human {
+  final String name;
+  Human({required this.name});
+  // Human 이라는 생성자 함수가 Human에 name 이라는 변수를 넣어준다
+  void sayHello() {
+    print('hi $name');
+  }
 }
 
-// method의 signature가 무엇인지 정의 (무엇을 반환 할 것인지)
-// Human 이라는 추상화 클래스는 Walk 라는 method를 가짐
-// 추상화 클래스는 이를 상속받는 모든 클래스가 가지고 있어야 하는 method를 정의함
-// 그 후에 그 method를 원하는대로 구현하면 됨
-enum Team { red, blue }
-// 오타와 같은 실수를 줄여준다. 텍스트형태 ("")로 쓸 필요도 없음
-// 새로운 타입을 만들어낸다
+enum Team { blue, red }
 
 class Player extends Human {
-  String name;
-  int age;
-  Team team;
-  // 더이상 String team 이 아닌 Team team 이다.
-
+  final Team team;
   Player({
-    required this.name,
-    required this.age,
     required this.team,
-  });
-  void walk() {
-    print('im walking');
-  }
-
+    // Player 이라는 생성자 함수가 Player에 team 이라는 변수를 넣어준다
+    // Player 자체에 있는 team은 그대로 놔두고 name은 super 클래스(부모)에 전달해준다.
+    required String name,
+    // Human(this.name) 으로 못씀 ㅠ named argument를 사용하는 Player의 생성자 함수를 만들어줘야 함
+  }) : super(name: name);
+  @override
   void sayHello() {
-    print("hi my name is $name");
+    super.sayHello();
+    print('i play for ${team}');
   }
+  // Human에서 온 sayHello를 우리가 직접만든 method로 대체 한다는 뜻
 }
 
+// super라는 키워드를 통해 확장을 한 부모 클래스(extends Human)와 상호작용
+// 확장(상속)한 부모 클래스의 프로퍼티에 접근하게 해주거나 메소드를 호출할 수 있게 해줌
 void main() {
-  var imonkfcwifi = Player(name: 'roh', age: 1, team: Team.red)
-    ..name = 'new'
-    ..age = 2
-    ..team = Team.blue
-    ..sayHello();
+  var player = Player(
+    team: Team.red,
+    name: 'Player',
+  );
 }
-
-
-// void main() {
-//   var imonkfcwifi = Player(name: 'roh', age: 1, team: 'e');
-//   imonkfcwifi.name = 'new';
-//   imonkfcwifi.age = 2;
-//   imonkfcwifi.team = 'a';
-// Syntax suger
+//  생성자 함수 Player에 있는 name은 Human으로 전달해준다
+//
