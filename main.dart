@@ -1,27 +1,41 @@
 class Player {
   final String name;
-  int xp, age;
+  int age;
   String team;
 
-  Player(
-      {required this.name,
-      required this.xp,
-      required this.team,
-      required this.age});
-  // class를 호출할때마다 기본으로 호출되는 기본 constructor
+  Player.fromJson(Map<String, dynamic> playerJson)
+      : name = playerJson['name'],
+        age = playerJson['age'],
+        team = playerJson['team'];
 
-  Player.createBluePlayer({required String name, required int age})
-      : this.age = age,
-        this.name = name,
-        this.team = 'blue',
-        this.xp = 0;
+  void sayHello() {
+    print("hi my name is $name");
+  }
 }
 
 //  콜론(:) 을 넣음으로써 dart에게 객체를 초기화 하겠다 명령
 void main() {
-  var player = Player.createBluePlayer(
-    name: "imonnkfcwifi",
-    age: 25,
-  );
-// 각각의 variable(변수)를 클래스에 보내면 기본 constructor에서 class property에 할당함
+  var apiData = [
+    {
+      "name": "roh",
+      "team": "blue",
+      "age": 1,
+    },
+    {
+      "name": "roh2",
+      "team": "blue",
+      "age": 1,
+    },
+    {
+      "name": "roh3",
+      "team": "blue",
+      "age": 1,
+    }
+  ];
+
+  apiData.forEach((playerJson) {
+    var player = Player.fromJson(playerJson);
+    player.sayHello();
+  });
+// string 을 key로 dynamic value를 values로 갖는 Map를 가져옴
 }
