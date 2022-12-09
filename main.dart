@@ -14,10 +14,10 @@ class Player extends Human {
   Player({
     required this.team,
     // Player 이라는 생성자 함수가 Player에 team 이라는 변수를 넣어준다
-    // Player 자체에 있는 team은 그대로 놔두고 name은 super 클래스(부모)에 전달해준다.
     required String name,
-    // Human(this.name) 으로 못씀 ㅠ named argument를 사용하는 Player의 생성자 함수를 만들어줘야 함
+    // Player 자체에 있는 team은 그대로 놔두고 name은 super 클래스(부모, extends Human)에 전달해준다.
   }) : super(name: name);
+  // Human(this.name) 으로 못씀 ㅠ named argument를 사용하는 Player의 생성자 함수를 만들어줘야 함
   @override
   void sayHello() {
     super.sayHello();
